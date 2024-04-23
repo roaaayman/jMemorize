@@ -31,7 +31,7 @@ import jmemorize.core.CardSide.CardSideObserver;
  */
 public class Card implements Events, Cloneable
 {
-    public static final long    ONE_DAY     = 1000 * 60 * 60 * 24;
+    public static final long    ONE_DAY     = (long) 1000 * 60 * 60 * 24;
     public static final boolean CLONE_DATES = Main.isDevel();
 
     private Category m_category;
