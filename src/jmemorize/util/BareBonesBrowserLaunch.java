@@ -53,8 +53,10 @@ public class BareBonesBrowserLaunch
         } 
         catch (Exception e)
         {
+
             Main.logThrowable(errMsg, e);
             JOptionPane.showMessageDialog(null, errMsg + ":\n" + e.getLocalizedMessage());
+       throw e;
         }
     }
 }
