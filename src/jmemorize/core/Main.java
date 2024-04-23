@@ -476,6 +476,7 @@ public class Main extends Observable implements LearnSessionProvider,
              FileChannel destinationChannel = new FileOutputStream(out).getChannel()) {
             // Transfer data from the source channel to the destination channel
             sourceChannel.transferTo(0, sourceChannel.size(), destinationChannel);
+            //ro
         }
         // Resources are automatically closed at the end of the try block
     }
