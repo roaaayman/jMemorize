@@ -207,7 +207,7 @@ public class FormattedText implements Cloneable
             assert false;
         }
         
-        return null;
+        return "";
     }
 
     /* (non-Javadoc)
