@@ -220,7 +220,7 @@ public class LearnHistory
     {
         public long toValue(Calendar c)
         {
-            return c.get(Calendar.DAY_OF_YEAR)+ 1000 * c.get(Calendar.YEAR);
+            return (long)c.get(Calendar.DAY_OF_YEAR)+ 1000 * c.get(Calendar.YEAR);
         }
 
         public DateFormat getFormat()
@@ -244,7 +244,7 @@ public class LearnHistory
     {
         public long toValue(Calendar c)
         {
-            return c.get(Calendar.WEEK_OF_YEAR) + 1000 * c.get(Calendar.YEAR);
+            return (long)c.get(Calendar.WEEK_OF_YEAR) + 1000 * c.get(Calendar.YEAR);
         }
 
         public DateFormat getFormat()
@@ -268,7 +268,7 @@ public class LearnHistory
     {
         public long toValue(Calendar c)
         {
-            return c.get(Calendar.MONTH) + 1000 * c.get(Calendar.YEAR);
+            return (long)c.get(Calendar.MONTH) + 1000 * c.get(Calendar.YEAR);
         }
 
         public DateFormat getFormat()
