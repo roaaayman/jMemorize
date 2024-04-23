@@ -30,7 +30,7 @@ import jmemorize.gui.Localization;
  */
 public class TimeSpan
 {
-    public final static long MINUTE = 60 * 1000;
+    public final static long MINUTE = (long) 60 * 1000;
     public final static long HOUR   = 60 * MINUTE;
     public final static long DAY    = 24 * HOUR;
     
