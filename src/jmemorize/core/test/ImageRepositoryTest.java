@@ -42,10 +42,11 @@ public class ImageRepositoryTest extends TestCase
     }
     
     @Override
-    protected void tearDown() throws Exception
-    {
+    protected void tearDown() throws Exception {
         m_ir.clear();
-        delDir(TEST_DIR);
+        if (!delDir(TEST_DIR)) {
+            fail("Failed to delete test directory: " + TEST_DIR.getAbsolutePath());
+        }
     }
     
     public void testAddSingleImageReturnsSameId() throws IOException
@@ -164,20 +165,24 @@ public class ImageRepositoryTest extends TestCase
         assertEquals(1, files.length);
         assertTrue(files[0].toString().endsWith(".png"));
     }
-    
-    private void delDir(File dir)
-    {
-        String[] entries = dir.list();
-        
-        if (entries != null)
-        {
-            for (int i = 0; i < entries.length; i++)
-            {
-                delDir(new File(entries[i]));
+
+    private boolean delDir(File dir) {
+        File[] files = dir.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    if (!delDir(file)) {
+                        return false; // Deletion failed
+                    }
+                } else {
+                    if (!file.delete()) {
+                        return false; // Deletion failed
+
+                    }
+                }
             }
         }
-        
-        dir.delete();
+        return dir.delete(); // Delete empty directory
     }
     
     private String addImage(String filename) throws IOException
