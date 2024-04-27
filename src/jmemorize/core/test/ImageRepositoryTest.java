@@ -177,6 +177,7 @@ public class ImageRepositoryTest extends TestCase
                 } else {
                     if (!file.delete()) {
                         return false; // Deletion failed
+
                     }
                 }
             }
