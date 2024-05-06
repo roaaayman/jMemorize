@@ -281,7 +281,7 @@ public class CardCounterPanel extends JPanel
 
                 frontLearnedAmount = Math.min(frontLearnedAmount, frontTargetAmount);
                 backLearnedAmount = Math.min(backLearnedAmount, backTargetAmount);
-                vals[i] = (frontLearnedAmount + backLearnedAmount) / targetAmount;
+                vals[i] = ((float)frontLearnedAmount + backLearnedAmount) / targetAmount;
             }
         }
         
