@@ -454,7 +454,7 @@ public class LearnSettings
             case 2 : //quadratic
                 for (int i = 0; i < SCHEDULE_LEVELS; i++)
                 {
-                    schedule[i] = (int)Math.pow(i+1, 2) * 60 * 24;
+                    schedule[i] = (int) (Math.pow( (double) i+1, 2) * 60 * 24);
                 }
                 return schedule;
 
